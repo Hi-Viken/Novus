@@ -1,0 +1,65 @@
+﻿// Copyright (c) Argo Zhang (argo@live.ca). All rights reserved.
+// Licensed under the LGPL License, Version 3.0. See License.txt in the project root for license information.
+// Website: https://pro.blazor.zone
+
+using Novus.DataAccess.Models;
+using Novus.Web.Core;
+using Novus.Web.Extensions;
+using Novus.Web.Models;
+using Novus.Web.Utils;
+
+namespace Novus.Web.Components.Components;
+
+/// <summary>
+/// 
+/// </summary>
+public partial class MenusSearch
+{
+    [NotNull]
+    [Inject]
+    private IDict? DictService { get; set; }
+
+    private IEnumerable<SelectedItem>? CategoryItems { get; set; }
+
+    private IEnumerable<SelectedItem>? ResourceItems { get; set; }
+
+    private List<SelectedItem>? AppItems { get; set; }
+
+    private List<SelectedItem>? TargetItems { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Parameter]
+    [NotNull]
+    public MenusSearchModel? Value { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Parameter]
+    public EventCallback<MenusSearchModel> ValueChanged { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        TargetItems = new List<SelectedItem>()
+        {
+            new SelectedItem("", "全部")
+        };
+        TargetItems.AddRange(LookupHelper.GetTargets());
+
+        AppItems = new List<SelectedItem>()
+        {
+            new SelectedItem("", "全部")
+        };
+        AppItems.AddRange(DictService.GetApps().ToSelectedItemList());
+
+        ResourceItems = typeof(EnumResource).ToSelectList(new SelectedItem("", "全部"));
+        CategoryItems = typeof(EnumNavigationCategory).ToSelectList(new SelectedItem("", "全部"));
+    }
+}

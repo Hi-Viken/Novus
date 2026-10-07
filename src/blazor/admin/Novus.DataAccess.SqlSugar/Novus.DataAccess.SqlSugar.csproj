@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Novus.Caching\Novus.Caching.csproj" />
+    <ProjectReference Include="..\Novus.Web.Core\Novus.Web.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapBlazor" Version="10.10.2" />
+    <PackageReference Include="BootstrapBlazor.DataAccess.SqlSugar" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="SqlSugar" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <NoWarn>CS8002</NoWarn>
+  </PropertyGroup>
+
+</Project>

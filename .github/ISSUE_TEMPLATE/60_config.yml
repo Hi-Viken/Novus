@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+
+contact_links:
+  - name: 🗨️ Discussions
+    url: https://github.com/ArgoZhang/Novus/discussions
+    about: Please post any questions during use here
+  - name: 🚀 Quick start
+    url: https://github.com/ArgoZhang/Novus/discussions/categories/quick-start
+    about: About BootstrapBlazor quick start please visit here

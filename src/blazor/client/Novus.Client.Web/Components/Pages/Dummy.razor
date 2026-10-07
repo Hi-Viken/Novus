@@ -1,0 +1,8 @@
+﻿@page "/dummy"
+
+<AdminTable TItem="Novus.Client.DataAccess.Models.DummyEntity" OnQueryAsync="OnQueryAsync">
+    <TableColumns>
+        <TableColumn @bind-Field="context.Id"></TableColumn>
+        <TableColumn @bind-Field="context.Name"></TableColumn>
+    </TableColumns>
+</AdminTable>

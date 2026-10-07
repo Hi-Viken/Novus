@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Bootstrap.Security.Blazor" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Novus.Client.Web.Models\Novus.Client.DataAccess.Models.csproj" />
+  </ItemGroup>
+
+</Project>

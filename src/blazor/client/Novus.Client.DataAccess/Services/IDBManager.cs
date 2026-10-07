@@ -1,0 +1,19 @@
+﻿// Copyright (c) Argo Zhang (argo@live.ca). All rights reserved.
+// Licensed under the LGPL License, Version 3.0. See License.txt in the project root for license information.
+// Website: https://pro.blazor.zone
+
+using PetaPoco;
+
+namespace Novus.Client.DataAccess.PetaPoco.Services;
+
+/// <summary>
+/// 
+/// </summary>
+public interface IDBManager
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    IDatabase Create(string connectionName = "ba", bool keepAlive = false);
+}

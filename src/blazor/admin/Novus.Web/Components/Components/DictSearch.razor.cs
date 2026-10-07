@@ -1,0 +1,29 @@
+﻿// Copyright (c) Argo Zhang (argo@live.ca). All rights reserved.
+// Licensed under the LGPL License, Version 3.0. See License.txt in the project root for license information.
+// Website: https://pro.blazor.zone
+
+using Novus.DataAccess.Models;
+using Novus.Web.Models;
+
+namespace Novus.Web.Components.Components;
+
+/// <summary>
+/// 
+/// </summary>
+public partial class DictSearch
+{
+    private IEnumerable<SelectedItem>? Items { get; set; } = typeof(EnumDictDefine).ToSelectList(new SelectedItem("", "全部"));
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Parameter]
+    [NotNull]
+    public DictsSearchModel? Value { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Parameter]
+    public EventCallback<DictsSearchModel> ValueChanged { get; set; }
+}
